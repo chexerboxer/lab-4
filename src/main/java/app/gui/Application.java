@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -38,6 +39,14 @@ public class Application {
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
+
+            StringBuilder sb = new StringBuilder();
+            Map<String, String> env = System.getenv();
+            for (String key : env.keySet()) {
+                sb.append(key + ": " + env.get(key)  + "\n");
+            }
+            System.out.println(sb.toString());
+
 
         // Initial setup for the program.
         // The config hides the details of which implementation of GradeDB
